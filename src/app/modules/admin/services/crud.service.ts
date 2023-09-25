@@ -29,6 +29,6 @@ export class CrudService {
    }
 
    obtenerProducto(){
-    return this.productosCollection.snapshotChanges().pipe(map(action=>action.map(a=>a.payload.doc.data)))
+    return this.productosCollection.snapshotChanges().pipe(map(action=>action.map(a=>a.payload.doc.data())))
    }
 }
