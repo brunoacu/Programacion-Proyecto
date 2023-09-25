@@ -1,0 +1,33 @@
+
+  <div class="container">
+    <div class="row">
+        <h1>Registrate</h1>
+        <i class="material-icons" style="font-size: 200px;">person</i>
+        <mat-form-field appearance="fill">
+          <mat-label>Ingrese el nombre de usuario:</mat-label>
+          <input matInput placeholder="Usuario"  [(ngModel)]="usuario.nombre" required>
+       </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Ingrese un email:</mat-label>
+            <input matInput placeholder="Usuario" type="email" [(ngModel)]="usuario.email" required>
+         </mat-form-field>
+         <mat-form-field>
+          <mat-label>Seleccione un rol:</mat-label>
+          <mat-select [(ngModel)]="usuario.rol" required>
+            <mat-option value="one">Admin</mat-option>
+            <mat-option value="two">Visitante</mat-option>
+          </mat-select>
+        </mat-form-field>
+         
+        <mat-form-field>
+            <mat-label>Ingrese una contraseña</mat-label>
+            <input matInput [type]="hide ?  'password' : 'text'"  [(ngModel)]="usuario.password" #input minlength="6" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-hint align="start">Minimo:6/{{input.value.length}}</mat-hint>
+        </mat-form-field>
+        <button class="boton" mat-raised-button color="primary" (click)="registrarse()">Registrar</button>
+    </div>
+  </div>
