@@ -20,6 +20,12 @@ import { CompeticionComponent } from './pages/competicion/competicion.component'
   imports: [
     CommonModule,
     ProductosRoutingModule
+  ],
+  exports:[
+    CosmeticoComponent,
+    RepuestoComponent,
+    CompeticionComponent,
+    ProductosComponent
   ]
 })
 export class ProductosModule { }
